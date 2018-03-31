@@ -27,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/hashMapScript/idiomHashmap.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="302">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -38,8 +38,8 @@
       <file leaf-file-name="master.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hashMapScript/master.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4561">
-              <caret line="268" column="22" lean-forward="false" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="22" />
+            <state relative-caret-position="254">
+              <caret line="880" column="152" lean-forward="true" selection-start-line="880" selection-start-column="152" selection-end-line="880" selection-end-column="152" />
               <folding />
             </state>
           </provider>
@@ -49,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/img_src.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="608">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -147,6 +147,7 @@
       <find>\&quot;:</find>
       <find>:</find>
       <find>cookie</find>
+      <find>rain</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -784,7 +785,7 @@
     <entry file="file://$PROJECT_DIR$/img_src.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -794,7 +795,7 @@
     <entry file="file://$PROJECT_DIR$/hashMapScript/idiomHashmap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -803,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hashMapScript/master.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4561">
-          <caret line="268" column="22" lean-forward="false" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="22" />
+        <state relative-caret-position="254">
+          <caret line="880" column="152" lean-forward="true" selection-start-line="880" selection-start-column="152" selection-end-line="880" selection-end-column="152" />
           <folding />
         </state>
       </provider>
