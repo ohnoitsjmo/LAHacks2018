@@ -18,9 +18,14 @@ for letters in string.ascii_lowercase:
         hashmap.update(temp_dict)
        # print("sucess" +letters)
 
+
+with open('master.json', 'w') as fp:
+    json.dump(hashmap, fp, indent =4)
+    fp.write("\n")
 #print( hashmap)
 #Input text from the user
 text = "all the more"
+
 
 def main(text):
     text = ''.join(c for c in text if c not in punctuation).lower()

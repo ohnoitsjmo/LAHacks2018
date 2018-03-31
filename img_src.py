@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import urllib2
+from urllib.request import *
 import os
-import cookielib
+import http.cookiejar
 import json
 
 def get_soup(url,header):
-    return BeautifulSoup(urllib2.urlopen(urllib2.Request(url,headers=header)),'html.parser')
+    return BeautifulSoup(urlopen(Request(url,headers=header)),'html.parser')
 
 
 def get_image(query):
@@ -30,10 +30,9 @@ def get_image(query):
         link , Type =json.loads(a.text)["ou"]  ,json.loads(a.text)["ity"]
         ActualImages.append((link,Type))
         count+=1
-        if count ==3:
-            break
+        break
 
-    #print  "there are total" , len(ActualImages),"images"
+    #print  ("there are total" , len(ActualImages),"images")
 
     if not os.path.exists(DIR):
                 os.mkdir(DIR)
@@ -43,23 +42,24 @@ def get_image(query):
                 os.mkdir(DIR)
     ###print images
     for i , (img , Type) in enumerate( ActualImages):
-        try:
-            req = urllib2.Request(img, headers={'User-Agent' : header})
-            raw_img = urllib2.urlopen(req).read()
+       try:
+        req = Request(img, headers={'User-Agent' : header})
+        cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
 
-            cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
-           # print cntr
-            if len(Type)==0:
-                f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+".jpg"), 'wb')
-            else :
-                f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+"."+Type), 'wb')
-            f.write(raw_img)
-            f.close()
-            return os.path.join(DIR , image_type + "_"+ str(cntr)+".jpg")
+        if len(Type) == 0:
+            f = os.path.join(DIR, image_type + "_" + str(cntr) + ".jpg")
+        else:
+            f = os.path.join(DIR, image_type + "_" + str(cntr) + "." + Type)
 
-        except Exception as e:
-    ##        print "could not load : "+img
+        urlretrieve(ActualImages[0][0], f)
+
+        return f
+
+       except Exception as e:
+        print( "could not load : "+img)
     ##        print e
-            pass
+
+'''
 if __name__ == '__main__':
-   print get_image("raining heavily")
+   print (get_image("raining heavily"))
+'''
