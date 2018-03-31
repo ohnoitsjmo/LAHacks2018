@@ -1,0 +1,13 @@
+How to Use:
+
+1. Import img_src
+
+*IMPORTANT, This is written in python2*
+
+2. use the get_image command, which takes a string (the phrase or definition you're trying to lookup).
+
+3. The command will download the image and save it in a local directory, then it will return the path of said image for future use.
+
+*Note: Currently it has a main function that will automatically gnerate a result for get_image("raining heavily"), delete it for your implementations*
+
+
