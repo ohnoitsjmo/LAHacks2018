@@ -1,0 +1,17 @@
+.lit {
+  color: blue;
+}
+
+.ok {
+  color: green;
+}
+
+#how {
+  font-style: italic;
+  font-weight: bold;
+  color: purple;
+}
+
+#yeah {
+  color: blue;
+}

@@ -4,7 +4,9 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import { blue600 } from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import { Card } from 'material-ui/Card';
 
@@ -16,9 +18,15 @@ import Home from './pages/Home';
 import Analyze from './pages/Analyze';
 import NotFound from './pages/NotFound';
 
+const theme = getMuiTheme({
+  palette: {
+    primary1Color: blue600,
+  },
+});
+
 const App = () => (
   <Router>
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={theme}>
       <AppBar
         className="App-header"
         title="Literally"
