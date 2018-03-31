@@ -1,37 +1,20 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { Card } from 'material-ui/Card';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+
+/* Styles */
 import './App.css';
 
-const Home = () => (
-  <div>
-    <h2>Welcome!</h2>
-  </div>
-);
-
-const Analyze = () => (
-  <div>
-    <h2>Input Text</h2>
-    <TextField
-      hintText="Paste or write text here"
-      floatingLabelText="Text to interpret"
-      multiLine={true}
-      rows={4}
-      fullWidth={true}
-      style={{
-        marginBottom: "1rem"
-      }}
-    />
-    <RaisedButton label="Analyze" primary={true} />
-  </div>
-);
+/* Pages (for router) */
+import Home from './pages/Home';
+import Analyze from './pages/Analyze';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   <Router>
@@ -46,8 +29,11 @@ const App = () => (
       />
 
       <Card className="App-card">
-        <Route exact path="/" component={Home} />
-        <Route path="/analyze" component={Analyze} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/analyze" component={Analyze} />
+          <Route component={NotFound} />
+        </Switch>
       </Card>
 
     </MuiThemeProvider>
