@@ -29,7 +29,7 @@ const App = () => (
     <MuiThemeProvider muiTheme={theme}>
       <AppBar
         className="App-header"
-        title="Literally"
+        title="On The Go Lingo"
         showMenuIconButton={false}
         style={{
           padding: "0 10vw"
