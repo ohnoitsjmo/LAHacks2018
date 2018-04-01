@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # import os
 # os.environ['DJANGO_SETTINGS_MODULE']='LAHacks2018.settings'
-
+import json
 import os
 from string import punctuation
 
@@ -23,13 +23,10 @@ from FOSTranslator.serializers import FOSTranslatorSerializer
 # Create your views here.
 #@csrf_exempt
 def get_idioms(request):
-    """
-    List all code snippets, or create a new snippet.
-    """
-    ##    if request.method == 'GET':
-            # text_to_check = request.data.text
-    text_to_check = "Today, it's raining cats and dogs and it's raining cats and dogs"
 
+    if request.method == 'GET':
+        text_to_check = request.data.text
+#text_to_check = "Today, it's raining cats and dogs and it's raining cats and dogs"
     idioms = Idiom.objects.all()
 
     list_of_dict_idioms = []
@@ -44,9 +41,8 @@ def get_idioms(request):
             dict2 = {'index': str(text_to_check.find(idiom_instance.idiom)), 'idiom': idiom_instance.idiom, 'literal': idiom_instance.definition}
             list_of_dict_idioms.append(dict2)
             text_to_check = text_to_check[text_to_check.find(idiom_instance.idiom)-1] + text_to_check[text_to_check.find(idiom_instance.idiom)+1:]
-
-    return list_of_dict_idioms
-
+    return json.dumps(list_of_dict_idioms)
+#return json.dump(list_of_dict_idioms)
 # one = {}
 # one['text'] = "raining cats and dogs"
 # two = {}
