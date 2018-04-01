@@ -25,7 +25,7 @@ SECRET_KEY = 'm$#r0dvxck!dqz7*mgubn0p7*!lh00yq8^hq6!-5akndo^0-(7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lahacks2018-199720.appspot.com']
+ALLOWED_HOSTS = ['lahacks2018-199720.appspot.com', '127.0.0.1']
 
 
 # Application definition
