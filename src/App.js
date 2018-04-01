@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import { Card } from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 /* Styles */
 import './App.css';
@@ -31,6 +32,7 @@ const App = () => (
         className="App-header"
         title="On The Go Lingo"
         showMenuIconButton={false}
+        iconElementRight={<FlatButton href="/analyze" label="Analyzer" />}
         style={{
           padding: "0 10vw"
         }}

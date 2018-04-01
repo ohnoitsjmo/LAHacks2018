@@ -5,7 +5,7 @@ const Home = () => (
     <h2 class="home-title">Welcome!</h2>
     <h3>Instructions for use</h3>
     <p>Have a piece of text you want analyzed for idioms and figures of speech?
-    Go to our <a href="/analyze">analyzer to find out the meaning</a>.</p>
+    Go to our <a href="/analyze">analyzer</a> to find out the meaning.</p>
  	<img src="children.jpeg" alt="Children"></img>
  </div>
 );
