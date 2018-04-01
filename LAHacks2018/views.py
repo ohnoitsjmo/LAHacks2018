@@ -11,7 +11,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ['DJANGO_SETTINGS_MODULE'] = 'LAHacks2018.settings'
 application = get_wsgi_application()
 
-import json
 from django.http import HttpResponse, JsonResponse
 #from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
@@ -20,14 +19,16 @@ from FOSTranslator.models import Idiom
 from FOSTranslator.serializers import FOSTranslatorSerializer
 
 
+
 # Create your views here.
 #@csrf_exempt
 def get_idioms(request):
     """
     List all code snippets, or create a new snippet.
     """
-    if request.method == 'GET':
-        text_to_check = request.data.text
+    ##    if request.method == 'GET':
+            # text_to_check = request.data.text
+    text_to_check = "Today, it's raining cats and dogs and it's raining cats and dogs"
 
     idioms = Idiom.objects.all()
 
@@ -42,19 +43,16 @@ def get_idioms(request):
         while (idiom_instance.idiom in text_to_check):
             dict2 = {'index': str(text_to_check.find(idiom_instance.idiom)), 'idiom': idiom_instance.idiom, 'literal': idiom_instance.definition}
             list_of_dict_idioms.append(dict2)
-    #print (list_of_dict_idioms)
+            text_to_check = text_to_check[text_to_check.find(idiom_instance.idiom)-1] + text_to_check[text_to_check.find(idiom_instance.idiom)+1:]
 
-    n_dict = json.dumps(list_of_dict_idioms)
-    print(n_dict)
-    return n_dict
-'''
-one = {}
-one['text'] = "raining cats and dogs"
-two = {}
-two['data'] = one
-two['method'] = "GET"
-x = get_idioms(two)
-'''
+    return list_of_dict_idioms
+
+# one = {}
+# one['text'] = "raining cats and dogs"
+# two = {}
+# two['data'] = one
+# two['method'] = "GET"
+# x = get_idioms(two)
 
 
         # serializer = FOSTranslatorSerializer(FOSTranslator, many=True)
