@@ -28,21 +28,22 @@ def get_idioms(request):
     """
     ##    if request.method == 'GET':
             # text_to_check = request.data.text
-    text_to_check = "Today, it's raining cats and dogs and a burden"
+    text_to_check = "Today, it's raining cats and dogs and it's raining cats and dogs"
 
     idioms = Idiom.objects.all()
 
     list_of_dict_idioms = []
     text_to_check = ''.join(c for c in text_to_check if c not in punctuation).lower()
+    index = 0
 
     for idiom_instance in idioms:
         #print (idiom_instance.idiom)
         #print (text_to_check)
         idiom_instance.idiom = ''.join(c for c in idiom_instance.idiom if c not in punctuation).lower()
-        if idiom_instance.idiom in text_to_check:
-
+        while (idiom_instance.idiom in text_to_check):
             dict2 = {'index': str(text_to_check.find(idiom_instance.idiom)), 'idiom': idiom_instance.idiom, 'literal': idiom_instance.definition}
             list_of_dict_idioms.append(dict2)
+            text_to_check = text_to_check[text_to_check.find(idiom_instance.idiom)-1] + text_to_check[text_to_check.find(idiom_instance.idiom)+1:]
     print (list_of_dict_idioms)
 
     return list_of_dict_idioms
